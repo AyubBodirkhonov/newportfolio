@@ -1,0 +1,147 @@
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: var(--current-surface);
+  color: var(--current-text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--current-shadow-medium);
+  border: 1px solid var(--current-border);
+  z-index: var(--z-fixed);
+  transition: all var(--transition-normal);
+  overflow: visible;
+}
+
+.theme-toggle:hover {
+  background: var(--current-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--current-shadow-large);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--current-primary);
+  outline-offset: 2px;
+}
+
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.toggle-tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--current-surface);
+  color: var(--current-text-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  box-shadow: var(--current-shadow-light);
+  border: 1px solid var(--current-border);
+  pointer-events: none;
+}
+
+.toggle-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid var(--current-surface);
+}
+
+.theme-toggle:hover .toggle-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
+    top: 15px;
+    right: 15px;
+    font-size: 1.1rem;
+  }
+  
+  .toggle-tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+    font-size: 1rem;
+  }
+}
+
+/* Animation for theme transition */
+.theme-toggle.transitioning {
+  animation: themeTransition 0.3s ease-in-out;
+}
+
+@keyframes themeTransition {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .toggle-icon,
+  .toggle-tooltip {
+    transition: none;
+    animation: none;
+  }
+  
+  .theme-toggle:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .theme-toggle {
+    border: 2px solid var(--current-text-primary);
+  }
+  
+  .theme-toggle:hover {
+    background: var(--current-text-primary);
+    color: var(--current-bg);
+  }
+}

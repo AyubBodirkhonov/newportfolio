@@ -1,0 +1,370 @@
+.education-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education-card {
+  background: var(--current-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  border: 1px solid var(--current-border);
+  box-shadow: var(--current-shadow-light);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--current-primary), var(--current-accent));
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--current-shadow-large);
+  border-color: var(--current-primary);
+}
+
+.education-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.education-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--current-primary), var(--current-accent));
+  color: white;
+  border-radius: var(--radius-lg);
+  font-size: 2rem;
+  flex-shrink: 0;
+  box-shadow: var(--current-shadow-medium);
+}
+
+.education-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.degree-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--current-text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.field-of-study {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--current-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.university-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.university-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--current-text-primary);
+  margin: 0;
+}
+
+.education-meta {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.9rem;
+  color: var(--current-text-secondary);
+}
+
+.meta-item svg {
+  color: var(--current-primary);
+  font-size: 1rem;
+}
+
+.education-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.education-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--current-text-secondary);
+  margin: 0;
+  padding: var(--spacing-lg);
+  background: var(--current-bg);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--current-primary);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--current-text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.section-subtitle svg {
+  color: var(--current-primary);
+  font-size: 1.2rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--current-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--current-border);
+  transition: all var(--transition-fast);
+}
+
+.achievement-item:hover {
+  background: var(--current-surface);
+  border-color: var(--current-primary);
+  transform: translateX(5px);
+}
+
+.achievement-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--current-primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.achievement-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--current-text-secondary);
+}
+
+.education-note {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--current-primary), var(--current-accent));
+  border-radius: var(--radius-lg);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+}
+
+.note-content {
+  position: relative;
+  z-index: 1;
+}
+
+.note-content h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 var(--spacing-sm) 0;
+  color: white;
+}
+
+.note-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education-card {
+    padding: var(--spacing-xl);
+  }
+  
+  .education-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+  }
+  
+  .education-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  
+  .degree-title {
+    font-size: 1.4rem;
+  }
+  
+  .field-of-study {
+    font-size: 1.1rem;
+  }
+  
+  .university-name {
+    font-size: 1rem;
+  }
+  
+  .education-meta {
+    justify-content: center;
+    gap: var(--spacing-md);
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .achievement-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .achievement-text {
+    font-size: 0.9rem;
+  }
+  
+  .education-note {
+    padding: var(--spacing-md);
+  }
+  
+  .note-content h6 {
+    font-size: 1rem;
+  }
+  
+  .note-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .education-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+  
+  .degree-title {
+    font-size: 1.2rem;
+  }
+  
+  .field-of-study {
+    font-size: 1rem;
+  }
+  
+  .university-name {
+    font-size: 0.95rem;
+  }
+  
+  .education-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .meta-item {
+    font-size: 0.85rem;
+  }
+  
+  .education-description {
+    font-size: 0.9rem;
+    padding: var(--spacing-md);
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .achievement-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  
+  .achievement-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .education-card,
+  .achievement-item {
+    transition: none;
+  }
+  
+  .education-card:hover,
+  .achievement-item:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .education-card::before {
+    background: var(--current-text-primary);
+  }
+  
+  .achievement-icon {
+    background: var(--current-text-primary);
+    border: 1px solid white;
+  }
+  
+  .education-note {
+    background: var(--current-text-primary);
+    color: var(--current-bg);
+  }
+}
