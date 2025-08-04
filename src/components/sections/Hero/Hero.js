@@ -53,7 +53,7 @@ const Hero = () => {
             </a>
             <a href="#contact" className="btn btn-secondary">
               <FiMail />
-              <span>Get In Touch</span>
+              <span style={{ paddingLeft: "5px" }}>Get In Touch</span>
             </a>
           </motion.div>
 

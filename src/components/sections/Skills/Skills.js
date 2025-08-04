@@ -49,7 +49,11 @@ const Skills = () => {
 
   const languages = [
     { name: "Uzbek", level: "Native", flag: "🇺🇿" },
-    { name: "English", level: "B2 - Upper Intermediate", flag: "🇺🇸" },
+    {
+      name: "English",
+      level: "B2 - Upper Intermediate (IELTS 6.5)",
+      flag: "🇺🇸",
+    },
     { name: "Russian", level: "B2 - Upper Intermediate", flag: "🇷🇺" },
   ];
 

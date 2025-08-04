@@ -8,7 +8,6 @@ import {
   FiCode,
   FiBriefcase,
   FiBook,
-  FiBookOpen,
   FiMail,
 } from "react-icons/fi";
 import "./Header.css";
